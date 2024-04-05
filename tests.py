@@ -5,13 +5,10 @@ def vypis_pole(prvek):
     for x in range(len(prvek)):
         print(f"{x+1}. {prvek[x]}")
 
-def pridej_do_kosiku(zbozi, index, kosik):
-    if 0 <= index < len(zbozi):
-        vybrana_položka = zbozi.pop(index)
-        kosik.append(vybrana_položka)
-        print(f"{vybrana_položka} byla přidána do košíku")
-    else:
-        print("Neplatná volba. Zadejte prosím platné číslo")
+def kosik_plus(zbozi, index, kosik):
+    vyber = zbozi.pop(index)
+    kosik.append(vyber)
+    print(f"{vyber} byla přidána do košíku")
 
 while True:
     print("Zboží k dispozici: ")
@@ -22,11 +19,11 @@ while True:
     if volba == 'konec':
         break
 
-    index = int(volba) - 1
-    pridej_do_kosiku(zbozi, index, kosik) if 0 <= index < len(zbozi) else print("Neplatná volba. Zadejte prosím platné číslo.")
+    index = (int(volba) - 1)
+    kosik_plus(zbozi, index, kosik) if 0 <= index < len(zbozi) else print("Neplatná volba. Zadejte prosím platné číslo")
 
 print("Vaše položky v košíku: ")
 if len(kosik) > 0:
-    print(" ".join(kosik))
+    print(", ".join(kosik))
 else:
     print("Košík je prázdný")

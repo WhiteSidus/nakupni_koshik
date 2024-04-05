@@ -6,9 +6,9 @@ def vypis_pole(prvek):
         print(f"{x+1}. {prvek[x]}")
 
 def kosik_plus(zbozi, index, kosik):
-    zbozi.pop(index)
     kosik.append(zbozi)
-    print(f"{zbozi(index)} byla přidána do košíku")
+    zbozi.pop(index)
+    print(f"{zbozi[index]} byla přidána do košíku")
 
 while True:
     print("Zboží k dispozici: ")

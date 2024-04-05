@@ -20,7 +20,7 @@ while True:
         break
 
     index = (int(volba) - 1)
-    kosik_plus(zbozi, index, kosik) if 0 <= index < len(zbozi) else print("Neplatná volba. Zadejte prosím platné číslo")
+    kosik_plus(zbozi, index, kosik) if 0 < index <= len(zbozi) else print("Neplatná volba. Zadejte prosím platné číslo")
 
 print("Vaše položky v košíku: ")
 if len(kosik) > 0:
